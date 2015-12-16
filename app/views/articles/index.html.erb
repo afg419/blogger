@@ -2,7 +2,12 @@
 <ul>
   <% @articles.each do |article| %>
   <li><%=link_to(article.title, article_path(article), class: 'article_in_index')%></li>
+      <%= link_to("Delete Article", article_path(article), method: :delete, data: {confirm: "Really delete the article?"}) %>
+  <br><%= link_to "edit", edit_article_path(article) %>
+  <p>
+    <br>
+  </p>
   <% end %>
 </ul>
 <br>
-<%= link_to("Create new Article", new_article_path, class: 'create_article') %>
+<%= link_to("Create new Article", new_article_path, class: 'create_article') %></br>
